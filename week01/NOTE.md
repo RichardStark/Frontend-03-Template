@@ -9,6 +9,14 @@
 >
 > ❤️请务必确认完成了《进群后需要做的5件事》：https://shimo.im/docs/pnM2IuqRugg1BPzR/
 
+
+
+> \#学号:G20200447030117
+> \#姓名:张理查rootv
+> \#班级:1班
+> \#小组:4组
+> \#作业&总结链接:https://github.com/RichardStark/Frontend-03-Template/blob/master/week01/NOTE.md
+
 # 学习笔记
 
 ## 如果你要写一本关于整个前端开发的书，请你列出你的目录
