@@ -1,0 +1,148 @@
+// 计算字符串(cStr)部分匹配表
+
+
+<span class="cm-keyword">function</span> <span class="cm-def">partialMatchTable</span>(<span class="cm-def">cStr</span>)
+{</span></pre>
+
+
+<span class="cm-keyword">let</span> <span class="cm-def">i</span> <span class="cm-operator">=</span> <span
+  class="cm-number">1</span>, <span class="cm-def">j</span> <span class="cm-operator">=</span> <span
+  class="cm-number">0</span>;</span></pre>
+
+
+<span class="cm-keyword">let</span> <span class="cm-def">T</span> <span class="cm-operator">=</span> [<span
+  class="cm-number">0</span>];</span></pre>
+
+
+<span class="cm-keyword">do</span> {</span></pre>
+
+
+<span class="cm-keyword">if</span>(<span class="cm-variable-2">cStr</span>[<span class="cm-variable-2">i</span>] <span
+  class="cm-operator">===</span> <span class="cm-variable-2">cStr</span>[<span class="cm-variable-2">j</span>]){</span>
+</pre>
+
+
+<span class="cm-variable-2">T</span>.<span class="cm-property">push</span>(<span class="cm-variable-2">j</span><span
+  class="cm-operator">+</span><span class="cm-number">1</span>);</span></pre>
+
+
+<span class="cm-variable-2">j</span><span class="cm-operator">++</span>;</span></pre>
+
+
+<span class="cm-variable-2">i</span><span class="cm-operator">++</span>;</span></pre>
+
+
+} <span class="cm-keyword">else</span> <span class="cm-keyword">if</span>(<span class="cm-variable-2">j</span> <span
+  class="cm-operator">===</span> <span class="cm-number">0</span>) {</span></pre>
+
+
+<span class="cm-variable-2">T</span>.<span class="cm-property">push</span>(<span class="cm-number">0</span>);</span>
+</pre>
+
+
+<span class="cm-variable-2">i</span><span class="cm-operator">++</span>;</span></pre>
+
+
+} <span class="cm-keyword">else</span> {</span></pre>
+
+
+<span class="cm-variable-2">j</span> <span class="cm-operator">=</span> <span class="cm-variable-2">T</span>[<span
+  class="cm-variable-2">j</span><span class="cm-operator">-</span><span class="cm-number">1</span>];</span></pre>
+
+
+}</span></pre>
+
+
+} <span class="cm-keyword">while</span> (<span class="cm-variable-2">i</span> <span class="cm-operator">&lt;</span>
+<span class="cm-variable-2">cStr</span>.<span class="cm-property">length</span>);</span></pre>
+
+
+<span class="cm-keyword">return</span> <span class="cm-variable-2">T</span>;</span></pre>
+
+
+}</span></pre>
+
+
+<span cm-text="">&#8203;
+
+
+  // 判断某个字符串(pStr)中是否包含另外一个字符串(cStr)
+
+
+  // 本方法只找出第一次匹配的情况
+
+
+  <span class="cm-keyword">function</span> <span class="cm-def">strMatch</span>(<span class="cm-def">pStr</span>, <span
+    class="cm-def">cStr</span>) {</span></pre>
+
+
+<span class="cm-keyword">let</span> <span class="cm-def">p</span> <span class="cm-operator">=</span> <span
+  class="cm-number">0</span>, <span class="cm-def">c</span> <span class="cm-operator">=</span> <span
+  class="cm-number">0</span>;</span></pre>
+
+
+<span class="cm-keyword">let</span> <span class="cm-def">T</span> <span class="cm-operator">=</span> <span
+  class="cm-variable">partialMatchTable</span>(<span class="cm-variable-2">cStr</span>);</span></pre>
+
+
+<span class="cm-keyword">do</span> {</span></pre>
+
+
+<span class="cm-keyword">if</span>(<span class="cm-variable-2">p</span> <span class="cm-operator">&gt;=</span> <span
+  class="cm-variable-2">pStr</span>.<span class="cm-property">length</span>) {</span></pre>
+
+
+<span class="cm-keyword">return</span> <span class="cm-string-2">`字符串${</span><span
+  class="cm-variable-2">pStr</span><span class="cm-string-2">}中并不包含字符串${</span><span
+  class="cm-variable-2">cStr</span><span class="cm-string-2">}`
+
+
+  }</span></pre>
+
+
+<span class="cm-keyword">if</span>(<span class="cm-variable-2">pStr</span>[<span class="cm-variable-2">p</span>] <span
+  class="cm-operator">===</span> <span class="cm-variable-2">cStr</span>[<span class="cm-variable-2">c</span>]) {</span>
+</pre>
+
+
+<span class="cm-variable-2">p</span><span class="cm-operator">++</span>;</span></pre>
+
+
+<span class="cm-variable-2">c</span><span class="cm-operator">++</span>;</span></pre>
+
+
+} <span class="cm-keyword">else</span> {</span></pre>
+
+
+<span class="cm-keyword">if</span>(<span class="cm-variable-2">c</span> <span class="cm-operator">===</span> <span
+  class="cm-number">0</span>) {</span></pre>
+
+
+<span class="cm-variable-2">p</span><span class="cm-operator">++</span>;</span></pre>
+
+
+} <span class="cm-keyword">else</span> {</span></pre>
+
+
+<span class="cm-variable-2">c</span> <span class="cm-operator">=</span> <span class="cm-variable-2">T</span>[<span
+  class="cm-variable-2">c</span><span class="cm-operator">-</span><span class="cm-number">1</span>];</span></pre>
+
+
+}</span></pre>
+
+
+}</span></pre>
+
+
+} <span class="cm-keyword">while</span>(<span class="cm-variable-2">c</span> <span class="cm-operator">&lt;</span> <span
+  class="cm-variable-2">cStr</span>.<span class="cm-property">length</span>)</span></pre>
+
+
+<span class="cm-keyword">return</span> <span class="cm-string-2">`字符串${</span><span
+  class="cm-variable-2">pStr</span><span class="cm-string-2">}中包含字符串${</span><span
+  class="cm-variable-2">cStr</span><span class="cm-string-2">}，在${</span><span class="cm-variable-2">pStr</span><span
+  class="cm-string-2">}中第一次出现的位置为${</span><span class="cm-variable-2">p</span> <span class="cm-operator">-</span> <span
+  class="cm-variable-2">c</span><span class="cm-string-2">}`
+
+
+  }</span></pre>
