@@ -4,5 +4,5 @@
 
 输出几篇笔记：
 
-- 重学JavaScript04——文法
-- 重学JavaScript05——浏览器
+- [重学JavaScript04——文法](../重学JavaScript04——文法.md)
+- [重学JavaScript05——浏览器](../重学JavaScript05——浏览器.md)
